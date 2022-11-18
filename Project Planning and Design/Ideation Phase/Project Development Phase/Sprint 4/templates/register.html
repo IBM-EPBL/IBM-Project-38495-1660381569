@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Damage Prediction</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='register.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="/static/js/validation.js"></script>
+</head>
+
+<body>
+    <header>
+        <h1>Vehicle Damage Detection</h1>
+        <nav>
+            <li><a href="login" style="text-decoration: none;color: white;">Login</i></a></li>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="header">
+            <h1>Register here</h1>
+
+        </div>
+        <form class="form" id="form" action="/afterreg" onsubmit="return validatepassword()" method="post">
+            <div class="form-control">
+                <label>Name</label>
+                <input type="text" placeholder="Enter your name" id="username" name="name">
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small id="name_error"></small>
+            </div>
+            <div class="form-control">
+                <label>Email id</label>
+                <input type="email" placeholder="Enter your email id" id="email" name="email">
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small id="email_error"></small>
+            </div>
+            <div class="form-control">
+                <label>Password</label>
+                <input type="password" placeholder="Set password" id="password" name="pass">
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                <small id="password-error"></small>
+            </div>
+            <button type="submit">Submit</button>
+            
+        </form>
+        
+
+    </div>
+    <!-- <script>
+        const form = document.getElementById("form");
+        const username = document.getElementById("username");
+        const email = document.getElementById("email");
+        const password1 = document.getElementById("password");
+        var errorCount = 0;
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+            checkInput();
+        });
+        function checkInput() {
+            const usernameValue = username.value.trim();
+            const emailValue = email.value.trim();
+            const password1Value = password1.value.trim();
+
+            errorCount = 0;
+
+            if (usernameValue == "") {
+                setError(username, 'User name cannot be empty');
+            }
+            else {
+                setSuccess(username);
+                localStorage.setItem('name',username.value);
+            }
+
+            //email id
+
+
+            if (emailValue == "") {
+                setError(email, 'Please enter your email');
+            }
+            else if (!isEmail(emailValue)) {
+                setError(email, 'Email id not valid');
+            }
+            else {
+                setSuccess(email);
+                localStorage.setItem('Email id',email.value);
+            }
+
+            //password
+
+
+            if (password1Value === '') {
+                setError(password1,'Please enter your password');
+            }
+            else if (!password1Value.match(/^(?=.*[0-9])(?=.*[!@#$%^&*])[a-zA-Z0-9!@#$%^&*]{7,15}$/)){
+                setError(password1,'7-15 characters at least 1 numeric digit and special character');
+            }
+            else {
+                setSuccess(password1);
+                localStorage.setItem('Password',password1.value);
+                
+            }
+
+            if (errorCount === 0) {
+                return true;
+                alert("Register successfully");
+                window.parent.location.href = "home page.html";
+            }
+
+        }
+
+        function setError(input, message) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            formControl.className = 'form-control error';
+            small.innerText = message;
+            errorCount++;
+        }
+        function setSuccess(input) {
+            const formControl = input.parentElement;
+            formControl.className = 'form-control valid';
+            errorCount = errorCount > 0 ? errorCount-- : 0;
+
+            // console.log("SUCCESS: ErrorCOunt = ", errorCount, " From = ", input);
+
+        }
+        function isEmail(email) {
+            return /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/.test(email);
+        }
+    </script> -->
+</body>
+
+</html>

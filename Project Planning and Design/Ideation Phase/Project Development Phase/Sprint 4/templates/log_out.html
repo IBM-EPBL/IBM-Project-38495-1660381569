@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Damage Prediction</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='log out.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <header>
+        <h1>Vehicle Damage Prediction</h1>
+        <nav>
+            <li class="logout"><a href="/login" style="text-decoration: none;color: white;">Login</a></li>
+        </nav>
+    </header>
+    <div class="container">
+        <div class="header">
+            <h1>Successfully Logged Out!</h1>
+
+        </div>
+            <form class="form" id="form" action="/login" >
+                <div class="form-control">
+                    <lable>Login for more information</lable><br>
+                    <button>Login</button>
+                </div>
+            </form> 
+
+    </div>
+</body>
+</html>
