@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vehicle Damage Prediction</title>
+    <link rel="stylesheet" href="{{url_for('static', filename='login.css')}}">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <header>
+        <h1>Login page</h1>
+        <nav>
+            <li><a href="/Index" style="text-decoration:none ;color:white;">Home</a></li>
+            
+        </nav>
+    </header>
+    <div class="container">
+        <div class="header">
+            <h1>Login</h1>
+
+        </div>
+        <form class="form" id="form" action="/userlogin" method="POST">
+            <div class="form-control">
+                <label>Email id</label>
+                <input type="email" placeholder="Enter your email id" id="email" name="email">
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                {{pred}}
+                <small>Please check your email</small>
+            </div>
+            <div class="form-control">
+                <label>Password</label>
+                <input type="password" placeholder="Set password" id="password" name="password">
+                <i class="fa fa-check-circle"></i>
+                <i class="fa fa-exclamation-circle"></i>
+                {{msg}}
+                <small>Please check your password</small>
+            </div>
+            <button>Login</button>
+        </form>
+        <div class="header1">
+            <p>Don't have an account? <a href="register" style="text-decoration:none ;">Create new account</a></p>
+        </div>
+
+    </div>
+    <!-- <script>
+        const form = document.getElementById("form");
+        const email = document.getElementById("email");
+        const password1 = document.getElementById("password");
+        var errorCount = 0;
+
+        form.addEventListener('submit', e => {
+            e.preventDefault();
+
+            checkInput();
+        });
+        function checkInput() {
+            const emailValue = email.value.trim();
+            const password1Value = password1.value.trim();
+
+            var ID = document.getElementById('Email id');
+            var p = document.getElementById('Password');
+
+            errorCount = 0;
+            //email id
+
+            if (emailValue == "") {
+                setError(email, 'Please enter your email');
+            }
+            else if (emailValue !== ID) {
+                setError(email, 'Email id dose not exist');
+            }
+            else {
+                setSuccess(email);
+            }
+
+            //password
+
+
+            if (password1Value === '') {
+                setError(password1, 'Please enter your password');
+            }
+            else if (p !== password1Value) {
+                setError(password1, 'Incorrect password');
+            }
+            else {
+                setSuccess(password1);
+
+            }
+
+            if (errorCount === 0) {
+                alert("Login successfully");
+                window.parent.location.href = "home page.html";
+            }
+
+        }
+
+        function setError(input, message) {
+            const formControl = input.parentElement;
+            const small = formControl.querySelector('small');
+            formControl.className = 'form-control error';
+            small.innerText = message;
+            errorCount++;
+        }
+        function setSuccess(input) {
+            const formControl = input.parentElement;
+            formControl.className = 'form-control valid';
+            errorCount = errorCount > 0 ? errorCount-- : 0;
+
+            // console.log("SUCCESS: ErrorCOunt = ", errorCount, " From = ", input);
+
+        }
+    </script> -->
+</body>
+
+</html>
