@@ -1,0 +1,68 @@
+* {
+    font-family: sans-serif;
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+    background-image: url('/static/image/ibm\ gif.gif');
+    background-size:1600px 900px;
+}
+
+header{
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    font-size: smaller;
+    padding: 20px 10px;
+}
+nav li {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    font-size: larger;
+}
+.home{
+    border-bottom: 2px solid #fff724;
+}
+.about {
+    margin-top: 10px;
+    justify-content: center;
+    padding: 50px 20px;
+    text-align: center;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.title{
+    border-bottom: 2px solid orange;
+    width: max-content;
+    margin-bottom: 70px;
+    padding: 10px 20px;
+}
+.about p{
+    font-size: xx-large;
+}
+footer{
+    position: absolute;
+    display: flex;
+    justify-content: space-between;
+    background-color: black;
+    color: white;
+    padding: 10px 10px;
+    width: 100%;
+    bottom: 0%;
+}
+footer p{
+    margin-left: 10px;
+    padding: 10px 10px;
+    
+}
+footer ul i{
+    margin-top: auto;
+    padding: 10px 10px;
+    margin-right: 20px;
+}
